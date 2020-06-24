@@ -1,0 +1,26 @@
+{
+    "name": "ui5-reactive",
+    "version": "1.0.0",
+    "description": "Sample to showcase a reactive UI5 application",
+    "private": true,
+    "scripts": {
+        "build": "yarn workspaces run build",
+        "build:apollo": "yarn workspace ui5-apollo build",
+        "build:sampleapp": "yarn workspace ui5-sampleapp build",
+        "build:todoapp": "yarn workspace ui5-todoapp build",
+        "start": "npm-run-all build:apollo --parallel start:server start:todoapp",
+        "start:sampleapp": "yarn workspace ui5-sampleapp start",
+        "start:todoapp": "yarn workspace ui5-todoapp start",
+        "start:server": "yarn workspace graphql-server-todo-example start",
+        "dev": "yarn workspace ui5-todoapp dev",
+        "dev:sampleapp": "yarn workspace ui5-sampleapp dev",
+        "dev:todoapp": "yarn workspace ui5-todoapp dev",
+        "watch": "yarn workspace ui5-sampleapp watch"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "npm-run-all": "^4.1.5"
+    }
+}

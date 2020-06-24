@@ -1,0 +1,46 @@
+specVersion: '2.0'
+metadata:
+  name: sap.ui.demo.todo
+type: application
+framework:
+  name: OpenUI5
+  version: "1.78.1"
+  libraries:
+    - name: sap.f
+    - name: sap.m
+    - name: sap.ui.core
+    - name: sap.ui.unified
+    - name: themelib_sap_fiori_3
+server:
+  customMiddleware:
+  - name: ui5-middleware-livereload
+    afterMiddleware: compression
+    configuration:
+      debug: true
+      ext: xml,json,properties
+      port: 35729
+      path: webapp
+  - name: ui5-middleware-graphql
+    mountPath: /graphql
+    afterMiddleware: compression
+  - name: ui5-middleware-modules
+    mountPath: /node_modules
+    afterMiddleware: compression
+---
+# https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/
+specVersion: '1.0'
+metadata:
+  name: ui5-middleware-graphql
+kind: extension
+type: server-middleware
+middleware:
+  path: lib/middlewares/graphql.js
+---
+# https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/
+specVersion: '1.0'
+metadata:
+  name: ui5-middleware-modules
+kind: extension
+type: server-middleware
+middleware:
+  path: lib/middlewares/modules.js

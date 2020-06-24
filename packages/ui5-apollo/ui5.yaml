@@ -1,0 +1,8 @@
+specVersion: '1.0'
+metadata:
+  name: sap.ui.apollo
+type: library
+resources:
+  configuration:
+    paths:
+      src: dist/resources
