@@ -1,0 +1,50 @@
+{
+  "name": "@petermuessig/ui5-apollo-lib",
+  "version": "0.2.0",
+  "description": "UI5 Apollo Client Wrapper Library",
+	"author": "Damian Maring, Peter Muessig",
+	"license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "build": "ui5 build --config ui5-build.yaml --clean-dest",
+    "build-bundles": "ui5 build --config ui5-build.yaml --exclude-task=* --include-task=ui5-task-rollup4ui5",
+    "watch": "npm-watch build"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "build-src/**",
+        "src/**"
+      ],
+      "extensions": "js,xml,properties,json",
+      "quiet": false
+    },
+    "build-bundles": {
+      "patterns": [
+        "build-src/**"
+      ],
+      "extensions": "js",
+      "quiet": false
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@rollup/plugin-babel": "^5.0.4",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.1",
+    "@ui5/cli": "^2.2.6",
+    "apollo-cache-inmemory": "1.6.6",
+    "apollo-client": "2.6.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "apollo-link-ws": "^1.0.20",
+    "apollo-utilities": "^1.3.4",
+    "graphql": "15.1.0",
+    "graphql-tag": "^2.10.3",
+    "npm-watch": "^0.6.0",
+    "rollup": "^2.21.0",
+    "rollup-plugin-terser": "^6.1.0"
+  }
+}

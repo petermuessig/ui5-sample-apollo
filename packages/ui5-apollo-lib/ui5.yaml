@@ -1,0 +1,13 @@
+specVersion: '2.0'
+metadata:
+  name: apollo.client
+type: library
+resources:
+  configuration:
+    paths:
+      src: dist/resources
+framework:
+  name: OpenUI5
+  version: "1.79.0"
+  libraries:
+    - name: sap.ui.core

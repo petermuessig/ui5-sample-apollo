@@ -1,0 +1,17 @@
+{
+  "name": "ui5-apollo-server",
+  "version": "1.0.0",
+  "description": "Sample Apollo GraphQL todo server",
+	"author": "Damian Maring, Peter Muessig",
+	"license": "Apache-2.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.14.4",
+    "cors": "^2.8.5",
+    "graphql": "^15.1.0"
+  }
+}
