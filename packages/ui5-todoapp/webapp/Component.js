@@ -1,5 +1,5 @@
 sap.ui.define([
-	"sap/ui/core/UIComponent", "sap/ui/apollo/thirdparty/apollo.min", "sap/ui/core/ComponentSupport"
+	"sap/ui/core/UIComponent", "apollo/client/thirdparty/apollo", "sap/ui/core/ComponentSupport"
 ], function(UIComponent, UI5Apollo) {
 	"use strict";
 

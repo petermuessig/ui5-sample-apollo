@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <library xmlns="http://www.sap.com/sap.ui.library.xsd" >
 
-  <name>sap.ui.apollo</name>
-  <vendor>SAP SE</vendor>
+  <name>apollo.client</name>
+  <vendor></vendor>
   <copyright>${copyright}</copyright>
   <version>${version}</version>
 
-  <documentation>Apollo Client for UI5</documentation>
+  <documentation>UI5 Apollo Client Wrapper Library</documentation>
 
   <dependencies>
     <dependency>

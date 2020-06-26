@@ -1,21 +1,19 @@
 {
-    "name": "ui5-reactive",
+    "name": "ui5-sample-apollo",
     "version": "1.0.0",
     "description": "Sample to showcase a reactive UI5 application",
     "private": true,
     "scripts": {
-        "build": "yarn workspaces run build",
-        "build:apollo": "yarn workspace ui5-apollo build",
-        "build:sampleapp": "yarn workspace ui5-sampleapp build",
+        "build": "npm-run-all build:apollo --parallel build:apollo-lib build:todoapp",
+        "build:apollo-lib": "yarn workspace ui5-apollo-lib build",
         "build:todoapp": "yarn workspace ui5-todoapp build",
-        "start": "npm-run-all build:apollo --parallel start:server start:todoapp",
-        "start:sampleapp": "yarn workspace ui5-sampleapp start",
+        "start": "npm-run-all build:apollo-lib --parallel start:apollo-server start:todoapp",
+        "start:apollo-server": "yarn workspace ui5-apollo-server start",
         "start:todoapp": "yarn workspace ui5-todoapp start",
-        "start:server": "yarn workspace graphql-server-todo-example start",
-        "dev": "yarn workspace ui5-todoapp dev",
-        "dev:sampleapp": "yarn workspace ui5-sampleapp dev",
-        "dev:todoapp": "yarn workspace ui5-todoapp dev",
-        "watch": "yarn workspace ui5-sampleapp watch"
+        "watch": "npm-run-all --parallel watch:apollo-lib watch:apollo-server watch:todoapp",
+        "watch:apollo-lib": "yarn workspace ui5-apollo-lib watch",
+        "watch:apollo-server": "yarn workspace ui5-apollo-server watch",
+        "watch:todoapp": "yarn workspace ui5-todoapp watch"
     },
     "workspaces": [
         "packages/*"

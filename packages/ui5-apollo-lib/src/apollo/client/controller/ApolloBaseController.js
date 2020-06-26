@@ -4,7 +4,7 @@ sap.ui.define([
 	"sap/ui/base/BindingParser"
 ], (Controller, JSONModel, BindingParser) => {
 	"use strict";
-	return Controller.extend("sap.ui.apollo.controller.ApolloBaseController", {
+	return Controller.extend("apollo.client.controller.ApolloBaseController", {
 		onInit: function () {
 			this.apolloClient = this.getOwnerComponent().apolloClient;
 			this.$mutate = this.apolloClient.mutate

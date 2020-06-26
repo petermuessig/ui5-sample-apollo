@@ -11,20 +11,20 @@
 		"serve-dist": "ws --compress -d dist"
 	},
 	"dependencies": {
-		"ui5-apollo": "^1.0.0"
+		"ui5-apollo-lib": "^1.0.0"
 	},
 	"devDependencies": {
 		"@ui5/cli": "^2.2.6",
-		"local-web-server": "^3.0.7",
 		"express-graphql": "^0.9.0",
 		"graphql": "^14.6.0",
+		"local-web-server": "^3.0.7",
 		"npm-run-all": "^4.1.5",
 		"ui5-middleware-livereload": "^0.1.5"
 	},
 	"ui5": {
 		"dependencies": [
 			"ui5-middleware-livereload",
-			"ui5-apollo"
+			"ui5-apollo-lib"
 		]
 	}
 }

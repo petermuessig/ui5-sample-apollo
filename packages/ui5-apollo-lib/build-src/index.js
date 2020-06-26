@@ -8,16 +8,6 @@ import { split } from 'apollo-link';
 //const ApolloLink = require('apollo-link')
 import { default as gql } from "graphql-tag";
 
-if (window.sap && sap.ui && sap.ui.loader && typeof sap.ui.loader.config) {
-	sap.ui.loader.config({
-		shim: {
-			"sap/ui/apollo/thirdparty/apollo.min": {
-				exports: "UI5Apollo"
-			}
-		}
-	});
-}
-
 export default {
 	ApolloClient,
 	InMemoryCache,
