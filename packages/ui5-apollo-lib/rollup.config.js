@@ -4,7 +4,7 @@ import replace from "@rollup/plugin-replace";
 import resolve from "rollup-plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 
-const pkgJson = require("../package.json");
+const pkgJson = require("./package.json");
 
 function buildConfig(minify) {
 	const config = {

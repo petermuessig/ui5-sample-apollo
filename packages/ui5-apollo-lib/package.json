@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "run-p build:ui5 build:browser",
 		"build:ui5": "ui5 build --config ui5-build.yaml --clean-dest",
-		"build:browser": "rollup --config build/rollup.config.js"
+		"build:browser": "rollup --config rollup.config.js"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.4",
