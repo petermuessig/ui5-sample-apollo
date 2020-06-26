@@ -45,6 +45,4 @@ const bundles = [
 	minify(bundle),
 ];
 
-console.log(JSON.stringify(bundles));
-
 export default bundles;
