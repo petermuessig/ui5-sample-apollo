@@ -1,3 +1,4 @@
+// TODO: transpile!
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
@@ -7,7 +8,7 @@ sap.ui.define([
 	return Controller.extend("apollo.client.controller.ApolloBaseController", {
 		onInit: function () {
 			this.apolloClient = this.getOwnerComponent().apolloClient;
-			this.$mutate = this.apolloClient.mutate
+			this.$mutate = this.apolloClient.mutate;
 
 			this.getView().setModel(new JSONModel({
 				errors: undefined
