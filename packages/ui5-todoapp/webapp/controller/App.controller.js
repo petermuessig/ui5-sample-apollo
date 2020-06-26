@@ -4,8 +4,8 @@ sap.ui.define([
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/apollo/thirdparty/apollo.min",
-	"sap/ui/apollo/controller/ApolloBaseController"
+	"apollo/client/thirdparty/apollo",
+	"apollo/client/controller/ApolloBaseController"
 ], function(Device, Controller, Filter, FilterOperator, JSONModel, UI5Apollo, ApolloBaseController) {
 	"use strict";
 

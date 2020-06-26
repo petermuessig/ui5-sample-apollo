@@ -1,0 +1,14 @@
+{
+  "name": "ui5-apollo-server",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.14.4",
+    "graphql": "^15.1.0"
+  }
+}

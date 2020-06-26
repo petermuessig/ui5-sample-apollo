@@ -3,7 +3,7 @@
  */
 
 /**
- * Initialization Code and shared classes of library sap.ui.ux3.
+ * Initialization Code and shared classes of library apollo.client.
  */
 sap.ui.define([
 	'sap/ui/core/library', // library dependency
@@ -13,19 +13,17 @@ sap.ui.define([
 	"use strict";
 
 	/**
-	 * Controls that implement the SAP User Experience (UX) Guidelines 3.0
+	 * UI5 Apollo Client Wrapper Library
 	 *
 	 * @namespace
-	 * @name sap.ui.apollo
-	 * @author SAP SE
+	 * @name apollo
 	 * @version ${version}
 	 * @public
-	 * @deprecated Since 1.72
 	 */
 
 	// delegate further initialization of this library to the Core
 	sap.ui.getCore().initLibrary({
-		name : "sap.ui.apollo",
+		name : "apollo.client",
 		version: "${version}",
 		dependencies : ["sap.ui.core"],
 		types: [
@@ -35,17 +33,10 @@ sap.ui.define([
 		controls: [
 		],
 		elements: [
-		]
+		],
+		noLibraryCSS: true
 	});
 
-    sap.ui.loader.config({
-        shim: {
-            "sap/ui/apollo/thirdparty/apollo.min": {
-                exports: "UI5Apollo"
-            }
-        }
-    });
-    
-	return sap.ui.apollo;
+	return apollo;
 
 });
