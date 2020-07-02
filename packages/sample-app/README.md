@@ -4,7 +4,7 @@
 
 The sample you find here was only modified in the aspect of removing the todo mockdata.
 
-- Update the `manifest.json` datasources to point to our local GraphQL Service
+- Update the `dataSources` entry in the `manifest.json` to point to our local GraphQL Service
 ```json
 "dataSources": {
     "graphql": {
