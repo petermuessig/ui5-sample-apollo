@@ -14,7 +14,9 @@
 		"build-self-contained": "ui5 build self-contained -a --clean-dest",
 		"serve-dist": "ws --compress -d dist"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"ui5-apollo-lib": "^1.0.0"
+	},
 	"devDependencies": {
 		"@ui5/cli": "^2.2.6",
 		"eslint": "^6.8.0",
@@ -23,6 +25,13 @@
 		"karma-coverage": "^2.0.2",
 		"karma-ui5": "^2.2.0",
 		"local-web-server": "^3.0.7",
-		"rimraf": "^3.0.2"
+		"rimraf": "^3.0.2",
+		"ui5-middleware-livereload": "^0.3.0"
+	},
+	"ui5": {
+		"dependencies": [
+			"ui5-middleware-livereload",
+			"ui5-apollo-lib"
+		]
 	}
 }

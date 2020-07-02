@@ -2,12 +2,7 @@
 	"_version": "1.12.0",
 	"sap.app": {
 		"id": "sap.ui.demo.todo",
-		"type": "application",
-		"dataSources": {
-			"graphql": {
-				"uri": "http://localhost:4000/graphql"
-			}
-		}
+		"type": "application"
 	},
 	"sap.ui5": {
 		"dependencies": {
