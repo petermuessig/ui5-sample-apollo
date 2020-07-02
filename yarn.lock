@@ -2617,7 +2617,7 @@ debug@3.1.0, debug@~3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@^3.0.0, debug@^3.1.0, debug@^3.2.6:
+debug@^3.0.0, debug@^3.1.0, debug@^3.1.1, debug@^3.2.6:
   version "3.2.6"
   resolved "http://nexus.wdf.sap.corp:8081/nexus/repository/build.milestones.npm/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   integrity sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
@@ -5939,6 +5939,15 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
+portfinder@^1.0.26:
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.26.tgz#475658d56ca30bed72ac7f1378ed350bd1b64e70"
+  integrity sha512-Xi7mKxJHHMI3rIUrnm/jjUgwhbYMkp/XKEcZX3aG4BrumLpq3nmoQMX+ClYnDZnZ/New7IatC1no5RX0zo1vXQ==
+  dependencies:
+    async "^2.6.2"
+    debug "^3.1.1"
+    mkdirp "^0.5.1"
+
 portscanner@^2.1.1:
   version "2.2.0"
   resolved "http://nexus.wdf.sap.corp:8081/nexus/repository/build.milestones.npm/portscanner/-/portscanner-2.2.0.tgz#6059189b3efa0965c9d96a56b958eb9508411cf1"
@@ -7438,6 +7447,16 @@ ui5-middleware-livereload@^0.1.5:
     "@ui5/logger" "^1.0.2"
     connect-livereload "^0.6.1"
     livereload "^0.9.1"
+
+ui5-middleware-livereload@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/ui5-middleware-livereload/-/ui5-middleware-livereload-0.3.0.tgz#13c1284dc20d9268104417b70ca15fb8b2d9eeb3"
+  integrity sha512-wM6uubs8Zqi5ntCLiFwvI4M2IsZyJgx2TSjbnczz0hMRxoV0SuEJn3pvfHFBbfguXMpdAWzNZJCsHPNvLoObAw==
+  dependencies:
+    "@ui5/logger" "^1.0.2"
+    connect-livereload "^0.6.1"
+    livereload "^0.9.1"
+    portfinder "^1.0.26"
 
 ultron@~1.1.0:
   version "1.1.1"
