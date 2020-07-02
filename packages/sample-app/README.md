@@ -65,6 +65,11 @@ sap.ui.define([
 ```javascript
 return ApolloBaseController.extend("sap.ui.demo.todo.controller.App", {
 ```
+- In order to use the apolloBaseController you have to call it in the onInit method
+```javascript
+onInit: function () {
+	ApolloBaseController.prototype.onInit.apply(this, arguments);
+```
 - Add gql module to define your first query
 ```javascript
 const { gql } = UI5Apollo;
