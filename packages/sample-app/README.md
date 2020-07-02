@@ -61,6 +61,10 @@ sap.ui.define([
 	"apollo/client/controller/ApolloBaseController"
 ], function(Device, Controller, Filter, FilterOperator, JSONModel, UI5Apollo, ApolloBaseController) {
 ```
+- Add gql module to define your first query
+```javascript
+const { gql } = UI5Apollo;
+```
 - Now instead of using the default controller override it with the apolloBaseController provided by our lib.
 ```javascript
 return ApolloBaseController.extend("sap.ui.demo.todo.controller.App", {
@@ -69,10 +73,6 @@ return ApolloBaseController.extend("sap.ui.demo.todo.controller.App", {
 ```javascript
 onInit: function () {
 	ApolloBaseController.prototype.onInit.apply(this, arguments);
-```
-- Add gql module to define your first query
-```javascript
-const { gql } = UI5Apollo;
 ```
 - You can now add your first query as part of your normal controller definition
 ```javascript
