@@ -8,7 +8,7 @@ The sample you find here was only modified in the aspect of removing the todo mo
 ```json
 "dataSources": {
     "graphql": {
-        "uri": "http://localhost:4000/graphql",
+        "uri": "http://localhost:4000/graphql"
     }
 }
 ```
