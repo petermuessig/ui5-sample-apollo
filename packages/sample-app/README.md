@@ -15,7 +15,7 @@ The sample you find here was only modified in the aspect of removing the todo mo
 - Introduce the Apollo Client in your `component.js`
 ```javascript
 sap.ui.define([
-	"sap/ui/core/UIComponent",
+    "sap/ui/core/UIComponent",
     "apollo/client/thirdparty/apollo",
     "sap/ui/core/ComponentSupport"
 ], function(UIComponent, UI5Apollo) {
