@@ -37,17 +37,11 @@ sap.ui.define([
 				link: new HttpLink({ uri: this.getMetadata().getManifestEntry("/sap.app/dataSources/graphql/uri") }),
 				name: 'ui5-client',
 				version: '1.0',
-				defaultOptions: {//sadly we cannot rely on apollo cache currently
-					watchQuery: {
-						fetchPolicy: 'no-cache' 
-					},
-					query: {
-						fetchPolicy: 'no-cache' 
-					},
-					mutate: {
-						fetchPolicy: 'no-cache'
-					}
-				}
+				defaultOptions: {
+					watchQuery: { fetchPolicy: 'no-cache' },
+                    query: { fetchPolicy: 'no-cache' },
+					mutate: { fetchPolicy: 'no-cache' }
+				}  //sadly we cannot rely on apollo cache currently
 			});
 			return UIComponent.prototype.createContent.apply(this, arguments);
 		}
