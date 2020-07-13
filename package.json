@@ -4,7 +4,7 @@
     "description": "Sample to showcase a reactive UI5 application",
     "private": true,
     "scripts": {
-        "build": "npm-run-all build:apollo-lib build:todoapp:preload",
+        "build": "npm-run-all build:apollo-lib build:todoapp",
         "build:apollo-lib": "yarn workspace ui5-apollo-lib build",
         "build:todoapp": "yarn workspace ui5-todoapp build:preload",
         "start": "npm-run-all build:apollo-lib --parallel start:apollo-server start:todoapp",
