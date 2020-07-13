@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/base/BindingParser"
-], function(Controller, BindingParser) {
+	"sap/ui/base/BindingParser",
+	"sap/ui/model/json/JSONModel"
+], function(Controller, BindingParser, JSONModel) {
 	"use strict";
 
 	return Controller.extend("apollo.client.controller.ApolloBaseController", {
@@ -18,7 +19,10 @@ sap.ui.define([
 			this.$mutate = apolloClient.mutate.bind(apolloClient);
 			this.$subscribe = apolloClient.subscribe.bind(apolloClient);
 
-			// enrich the apollo root object
+			// create a JSONModel for the data
+			this.getView().setModel(new JSONModel());
+
+			// enrich the Apollo root object
 			if (this.apollo) {
 				Object.keys(this.apollo).forEach(entity => {
 					this.apollo[entity].invoke = () => {
