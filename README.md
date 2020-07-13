@@ -1,6 +1,6 @@
-# ui5-reactive
+# ui5-sample-apollo
 
-Sample to showcase a reactive UI5 application
+Sample to showcase a UI5 application running against a Apollo GraphQL server.
 
 ## Getting Started
 
