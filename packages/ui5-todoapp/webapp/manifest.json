@@ -18,7 +18,8 @@
 				"sap.ui.core": {},
 				"sap.m": {},
 				"sap.f": {},
-				"sap.ui.unified": {}
+				"sap.ui.unified": {},
+				"apollo.client": {}
 			}
 		},
 		"rootView": {
