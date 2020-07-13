@@ -1,65 +1,67 @@
-// TODO: transpile!
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/model/json/JSONModel",
-	"sap/ui/base/BindingParser"
-], (Controller, JSONModel, BindingParser) => {
+	"sap/ui/base/BindingParser",
+	"sap/ui/model/json/JSONModel"
+], function(Controller, BindingParser, JSONModel) {
 	"use strict";
+
 	return Controller.extend("apollo.client.controller.ApolloBaseController", {
+
+		/**
+		 * Initializes the ApolloBaseController
+		 */
 		onInit: function () {
-			this.apolloClient = this.getOwnerComponent().apolloClient;
-			this.$mutate = this.apolloClient.mutate;
+			// retrieve the Apollo client
+			var apolloClient = this.getOwnerComponent().apolloClient;
 
-			this.getView().setModel(new JSONModel({
-				errors: undefined
-			}));
-			Object.keys(this.apollo).forEach(entity => {
-				this.apollo[entity].invoke = () => {
-					this.invoke(entity)
-				}
+			// some syntactic sugar for the consumers
+			this.$query = apolloClient.query.bind(apolloClient);
+			this.$mutate = apolloClient.mutate.bind(apolloClient);
+			this.$subscribe = apolloClient.subscribe.bind(apolloClient);
 
-				if (!this.apollo[entity].skip) {
-					this.invoke(entity);
-				}
-			});
-		},
-		onApolloError (error) {
-			this.getView().getModel().setProperty("/errors", this.parseApolloError(error));
-		},
-		parseApolloError (error) {
-			let messages = "";
-			if (error.graphQLErrors) {
-				error.graphQLErrors.map(({ message, locations, path }) => {
-					console.log(`[Apollo Client] GraphQL Error: ${message}`);
-					messages += message + "\n";
+			// create a JSONModel for the data
+			this.getView().setModel(new JSONModel());
+
+			// enrich the Apollo root object
+			if (this.apollo) {
+				Object.keys(this.apollo).forEach(entity => {
+					this.apollo[entity].invoke = () => {
+						this.invoke(entity)
+					}
+					if (!this.apollo[entity].skip) {
+						this.invoke(entity);
+					}
 				});
 			}
-			if (error.networkError) {
-				console.log(`[Apollo Client] Network Error: ${error.networkError.message}`);
-				messages += error.networkError.message;
-			}
-			return messages;
 		},
-		invoke (entity) {
-			return this.apolloClient.query({
+
+		invoke: function (entity) {
+			var promise = this.$query({
 				query: this.apollo[entity].query,
 				variables: this._getVariables(this.apollo[entity].variables)
-			})
-				.then(result => {
-					const binding = BindingParser.complexParser(this.apollo[entity].binding);
-					this.getView().getModel(binding && binding.model).setProperty(binding && binding.path || `/${entity}`, result.data[this.apollo[entity].query.definitions[0].selectionSet.selections[0].name.value])
-				})
-				.catch(error => this.onApolloError(error));
+			}).then(function(result) {
+				const binding = BindingParser.complexParser(this.apollo[entity].binding);
+				this.getView().getModel(binding && binding.model).setProperty(binding && binding.path || `/${entity}`, result.data[this.apollo[entity].query.definitions[0].selectionSet.selections[0].name.value])
+			}.bind(this));
+			if (typeof this.onApolloError === "function") {
+				promise.catch(function(error) {
+					this.onApolloError(error);
+				}.bind(this));
+			}
 		},
-		_getVariables (variables = {}) {
+
+		_getVariables: function (variables) {
 			let result = {};
-			Object.keys(variables).forEach(key => {
-				const binding = BindingParser.complexParser(variables[key]);
-				if (binding) {
-					result[key] = this.getView().getModel(binding.model).getProperty(binding.path);
-				}
-			});
+			if (variables) {
+				Object.keys(variables).forEach(function(key) {
+					const binding = BindingParser.complexParser(variables[key]);
+					if (binding) {
+						result[key] = this.getView().getModel(binding.model).getProperty(binding.path);
+					}
+				});
+			}
 			return result;
 		}
+
 	});
 });

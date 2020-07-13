@@ -16,7 +16,7 @@ sap.ui.define([
 	 * UI5 Apollo Client Wrapper Library
 	 *
 	 * @namespace
-	 * @name apollo
+	 * @name apollo.client
 	 * @version ${version}
 	 * @public
 	 */
@@ -37,6 +37,6 @@ sap.ui.define([
 		noLibraryCSS: true
 	});
 
-	return apollo;
+	return apollo.client;
 
 });

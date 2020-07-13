@@ -1,6 +1,6 @@
-# ui5-reactive
+# ui5-sample-apollo
 
-Sample to showcase a reactive UI5 application
+Sample to showcase a UI5 application running against a Apollo GraphQL server.
 
 ## Getting Started
 
@@ -9,10 +9,10 @@ Sample to showcase a reactive UI5 application
 # install dependencies
 yarn
 
-# build the lib
-yarn build:apollo
+# start the watch mode for development
+yarn watch
 
-# start the dev mode
-yarn dev
+# start the productive mode
+yarn start
 
 ```
