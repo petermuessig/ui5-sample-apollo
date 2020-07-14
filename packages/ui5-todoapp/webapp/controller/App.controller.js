@@ -81,15 +81,15 @@ sap.ui.define([
 				error(err) { console.error('err', err); },
 			}
 
-			this.apolloClient.subscribe({
+			this.$subscribe({
 				query: TODO_ADDED_SUBSCRIPTION
 			}).subscribe(updateOnEvent);
 
-			this.apolloClient.subscribe({
+			this.$subscribe({
 				query: TODO_COMPLETED_SUBSCRIPTION
 			}).subscribe(updateOnEvent);
 
-			this.apolloClient.subscribe({
+			this.$subscribe({
 				query: TODO_DELETED_SUBSCRIPTION
 			}).subscribe(updateOnEvent);
 		},
@@ -111,13 +111,12 @@ sap.ui.define([
 				variables: {
 					title: oModel.getProperty("/newTodo")
 				},
-			})
-			.then(response => {
+			}).then(( /* response */ ) => {
 				oModel.setProperty("/newTodo", "");
 			})
 		},
 
-		updateTodo: function(oEvent, id) {
+		updateTodo: function(oEvent /*, id */) {
 			this.$mutate({
 				mutation: gql`mutation setTodoCompletionStatus($id: ID!, $completed: Boolean!) {
 					setTodoCompletionStatus(id: $id, completed: $completed) {
@@ -130,8 +129,7 @@ sap.ui.define([
 					id: oEvent.getSource().mProperties.name,
 					completed: oEvent.mParameters.selected
 				},
-			})
-			.then(response => {})
+			}).then(( /* response */ ) => {});
 		},
 
 		/**
@@ -142,8 +140,7 @@ sap.ui.define([
 				mutation: gql`mutation deleteCompleted {
 					deleteCompleted
 				}`
-			})
-			.then(response => {})
+			}).then(( /* response */ ) => {});
 		},
 
 		/**

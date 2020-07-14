@@ -4,11 +4,11 @@
 	"description": "Sample of an OpenUI5 app",
 	"private": true,
 	"scripts": {
-		"start": "ui5 serve",
-		"dev": "ui5 serve -o index.html",
-		"build": "ui5 build -a --clean-dest",
-		"build-self-contained": "ui5 build self-contained -a --clean-dest",
-		"serve-dist": "ws --compress -d dist"
+		"start": "ui5 serve --config ui5-dist.yaml",
+		"watch": "ui5 serve -o index.html",
+		"build": "ui5 build",
+		"build:preload": "ui5 build -a --clean-dest",
+		"build:self-contained": "ui5 build self-contained -a --clean-dest"
 	},
 	"dependencies": {
 		"ui5-apollo-lib": "^1.0.0"
@@ -18,13 +18,16 @@
 		"express-graphql": "^0.9.0",
 		"graphql": "^14.6.0",
 		"local-web-server": "^3.0.7",
-		"npm-run-all": "^4.1.5",
-		"ui5-middleware-livereload": "^0.1.5"
+		"ui5-middleware-livereload": "^0.1.5",
+		"ui5-middleware-simpleproxy": "^0.3.2",
+		"ui5-task-transpile": "^0.2.0"
 	},
 	"ui5": {
 		"dependencies": [
+			"ui5-apollo-lib",
 			"ui5-middleware-livereload",
-			"ui5-apollo-lib"
+			"ui5-middleware-simpleproxy",
+			"ui5-task-transpile"
 		]
 	}
 }

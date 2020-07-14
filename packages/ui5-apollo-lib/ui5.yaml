@@ -8,6 +8,6 @@ resources:
       src: dist/resources
 framework:
   name: OpenUI5
-  version: "1.78.1"
+  version: "1.79.0"
   libraries:
     - name: sap.ui.core
