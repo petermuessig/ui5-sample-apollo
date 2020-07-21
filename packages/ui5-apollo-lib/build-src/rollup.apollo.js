@@ -7,7 +7,7 @@ const { babel } = require("@rollup/plugin-babel");
 const { terser } = require("rollup-plugin-terser");
 
 function buildConfig(minify) {
-	const config = {
+    const config = {
         input: path.resolve(__dirname, "apollo/index.js"),
         output: {
             ui5ModuleName: `/resources/apollo/client/thirdparty/apollo${minify ? "" : "-dbg"}.js`,
