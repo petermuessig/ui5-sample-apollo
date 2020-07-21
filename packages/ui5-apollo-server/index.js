@@ -1,3 +1,4 @@
+var cors = require('cors')
 const { ApolloServer, gql, PubSub } = require('apollo-server');
 
 const pubsub = new PubSub();
@@ -95,6 +96,13 @@ const resolvers = {
 };
 
 const server = new ApolloServer({
+  cors: {
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: true
+  },
   typeDefs,
   resolvers,
   subscriptions: {
@@ -105,7 +113,7 @@ const server = new ApolloServer({
 });
 
 // The `listen` method launches a web server.
-server.listen().then(({ url, subscriptionsUrl }) => {
+server.listen().then(({url, subscriptionsUrl }) => {
   console.log(`🚀 Server ready at ${url}`);
   console.log(`🚀 Subscriptions ready at ${subscriptionsUrl}`);
 });
