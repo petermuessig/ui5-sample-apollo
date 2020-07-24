@@ -4,6 +4,8 @@
 
 ## Overview
 
+This project was part of the UI5Con on Air 2020 and was presented as part of a lightning talk. [The recording can be found on YouTube](https://www.youtube.com/watch?v=r1XChmnI5gw)
+
 This project show-cases the usage of [Apollo GraphQL](https://www.apollographql.com/) for UI5 applications. 
 The first step is the integration of OSS libraries directly from [npm](https://www.npmjs.com/) into UI5 by using 
 the new [CLI tooling](https://sap.github.io/ui5-tooling/). With [Rollup](https://rollupjs.org/) the Apollo GraphQL 
