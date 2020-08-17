@@ -37,6 +37,9 @@ To get started with the project, please ensure to run `yarn` once to install all
 # install dependencies
 yarn
 
+# trigger a build
+yarn build
+
 # start the watch mode for development
 # (hint: initially a refresh is needed after the build is completed!)
 yarn watch
