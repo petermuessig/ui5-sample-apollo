@@ -10,7 +10,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "apollo-server": "^2.14.4",
+    "apollo-server": "^2.25.3",
     "cors": "^2.8.5",
     "graphql": "^15.1.0"
   }
